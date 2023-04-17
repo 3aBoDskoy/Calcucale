@@ -4,21 +4,25 @@ import java.util.Scanner;
 import static java.lang.String.copyValueOf;
 import static java.lang.String.valueOf;
 
-public class Calc {
+public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         String[] s = scanner.nextLine().split(" ");
         String num_1 = s[0];
         String num_2 = s[2];
         String znak = s[1];
-        if (s.length == 3)
+
+
+        if ((s.length == 3) & (1 <= Integer.parseInt(num_1)) & (10 >= Integer.parseInt(num_1)) & (1 <= Integer.parseInt(num_2)) & (10 >= Integer.parseInt(num_2))) {
             if (num_1.matches("^[I,II,III,IV,V,VI,VII,VIII,IX,X]+$") & num_2.matches("^[I,II,III,IV,V,VI,VII,VIII,IX,X]+$")) {
                 System.out.println(getRomeRusult(num_1, num_2, znak));
             } else {
                 System.out.println(getResult(num_1, num_2, znak));
             }
-        return;
+            return  ;
+        }
     }
+
 
     static int getResult(String num_1, String num_2, String znak) {
         int a = Integer.parseInt(num_1);
